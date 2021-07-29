@@ -8,6 +8,14 @@
 		SELECT * FROM `km_member` WHERE `uid`=#{uid} AND `pass`=PASSWORD(#{pass});
 	</select>
 	
+	
+	<update id="updateMemberPointMinus">
+		UPDATE `km_member` SET `point` = `point` - #{applyPoint} WHERE `uid`=#{uid};	
+	</update>
+	
+	<update id="updateMemberPointPlus">
+		UPDATE `km_member` SET `point` = `point` + #{point} WHERE `uid`=#{uid};	
+	</update>
 
 </mapper>
 
